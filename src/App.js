@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './App.css';
+import Axios from "axios";
 
 function App() {
   const [values, setValues] = useState();
@@ -10,10 +11,17 @@ function App() {
       [value.target.name]: value.target.name,
     }))
   };
-
+  // função clique do botão
   const  handleClickButton = () => {
-    console.log(values);
-  }
+    console.log('clique');
+    Axios.post("http://localhost:3001/register", {
+      name: values.name,
+      cost: values.cost,
+      category: values.category,
+    }).then((response) => {
+      console.log(response);
+    });
+  };
 
   return (
   <div className="app--container">
@@ -40,7 +48,8 @@ function App() {
           className="register--input"
           onChange={handleChangeValues}
         />
-        <button className="register--button" onClick={() => handleClickButton}>Cadastrar</button>
+        <button className="register--button" 
+        onClick={() => handleClickButton()}>Cadastrar</button>
      </div>
   </div>
   );
