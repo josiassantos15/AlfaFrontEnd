@@ -1,27 +1,36 @@
-.app--container {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.app-container {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-.register--container {
+
+.register-container {
   padding: 10px 20px;
+  width: max-content;
+  height: max-content;
+
+  margin-top: 20px;
   border: 3px solid black;
   border-radius: 5px;
-  margin-top: 20px;
 }
 
-.register--title {
+.register-title {
   text-align: center;
   margin-bottom: 20px;
-  font-family: monospace;
+  font-family: fantasy;
 }
 
-.register--input {
+.register-input {
   display: block;
-  padding: 7px 0;
   margin: 10px auto;
+  padding: 7px 0;
 }
 
-.register--button {
+.register-button {
   padding: 2px 5px;
 }
